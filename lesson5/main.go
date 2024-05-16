@@ -10,10 +10,14 @@ var (
 	v11, v12, v13, v14, v15 int  = 1, 2, 3, 5, 10
 )
 
+type square int // 5.6
+
 func main() {
 	var p *string // 5.1 & 5.3
 
 	var s string = "Hello, Kitty!" // 5.2  & 5.3 & 5.5
+
+	var sq square = 25 //5.5 I'm sorry, but "s" has used
 
 	// --- this block was checked---
 	fmt.Println("Task 5.2")
@@ -43,6 +47,8 @@ func main() {
 	change(&s)                        //to change var s
 	fmt.Printf("s значение: %s\n", s) // it's new
 
+	fmt.Println("Task 5.6")
+	fmt.Println(sq) //square type
 }
 
 func change(p *string) { // 5.5
