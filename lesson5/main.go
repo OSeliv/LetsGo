@@ -13,8 +13,9 @@ var (
 func main() {
 	var p *string // 5.1 & 5.3
 
-	var s string = "Hello, Kitty!" // 5.2  & 5.3
+	var s string = "Hello, Kitty!" // 5.2  & 5.3 & 5.5
 
+	// --- this block was checked---
 	fmt.Println("Task 5.2")
 	fmt.Printf("s значение: %s, адрес: %p\n", s, &s) //5.2
 
@@ -36,4 +37,14 @@ func main() {
 	fmt.Printf("v13: %d, %p\n", v13, &v13) // &v12 + 8b
 	fmt.Printf("v14: %d, %p\n", v14, &v14) // &v13 + 8b
 	fmt.Printf("v15: %d, %p\n", v15, &v15) // &v14 + 8b
+	// ---- end of the block  ----
+
+	fmt.Println("Task 5.5")
+	change(&s)                        //to change var s
+	fmt.Printf("s значение: %s\n", s) // it's new
+
+}
+
+func change(p *string) { // 5.5
+	*p = "GG WP" //changing param
 }
