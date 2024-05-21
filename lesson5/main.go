@@ -12,6 +12,13 @@ var (
 
 type square int // 5.6
 
+// --- 5.8 --- it must be commented for 5.6-5.7
+func (sq square) String() string {
+	return fmt.Sprintf("%d м²", int(sq))
+}
+
+// --- 5.8
+
 func main() {
 	var p *string // 5.1 & 5.3
 
@@ -48,24 +55,20 @@ func main() {
 	fmt.Printf("s значение: %s\n", s) // it's new
 
 	fmt.Println("Task 5.6")
-	fmt.Println(s6) //square type
+	fmt.Println(s6) //5.8 square type
 
 	fmt.Println("Task 5.7")
 	var s7 square = 30 //5.7 I'm sorry, but "s" has used for string
 	s7 += 15           // changing value
-	fmt.Println(s7)
+	fmt.Println(s7)    //5.8
 
 	fmt.Println("Task 5.8")
-	var s8 square = 34         //5.8
-	s8 += 10                   // changing value
-	fmt.Println(squareOut(s8)) // I'm not sure this has been the right solution
+	var s8 square = 34 //5.8 I'm sorry, but "s" has used for string
+	s8 += 10           // changing value
+	fmt.Println(s8)    //5.8
 
 }
 
 func change(p *string) { // 5.5
 	*p = "GG WP" //changing param
-}
-
-func squareOut(sq square) string { //5.8
-	return fmt.Sprintf("%d м²", sq)
 }
