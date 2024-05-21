@@ -17,7 +17,7 @@ func main() {
 
 	var s string = "Hello, Kitty!" // 5.2  & 5.3 & 5.5
 
-	var sq square = 25 //5.5 I'm sorry, but "s" has used
+	var s6 square = 25 //5.6 I'm sorry, but "s" has used
 
 	// --- this block was checked---
 	fmt.Println("Task 5.2")
@@ -48,9 +48,24 @@ func main() {
 	fmt.Printf("s значение: %s\n", s) // it's new
 
 	fmt.Println("Task 5.6")
-	fmt.Println(sq) //square type
+	fmt.Println(s6) //square type
+
+	fmt.Println("Task 5.7")
+	var s7 square = 30 //5.7 I'm sorry, but "s" has used for string
+	s7 += 15           // changing value
+	fmt.Println(s7)
+
+	fmt.Println("Task 5.8")
+	var s8 square = 34         //5.8
+	s8 += 10                   // changing value
+	fmt.Println(squareOut(s8)) // I'm not sure this has been the right solution
+
 }
 
 func change(p *string) { // 5.5
 	*p = "GG WP" //changing param
+}
+
+func squareOut(sq square) string { //5.8
+	return fmt.Sprintf("%d м²", sq)
 }
