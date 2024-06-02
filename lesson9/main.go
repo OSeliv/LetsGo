@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func fruitMarket(s string) int {
+func fruitMarket(s string) int { //9.1
 	fruits := map[string]int{
 		"апельсины": 5,
 		"яблоки":    3,
@@ -19,10 +19,22 @@ func fruitMarket(s string) int {
 	}
 }
 
+func checkFood(s string) { // 9.3
+	switch s {
+	case "апельсин", "груша", "яблоко":
+		fmt.Println("фрукт")
+	case "тыква", "огурец", "помидор":
+		fmt.Println("овощ")
+	default:
+		fmt.Println("что-то странное...")
+	}
+
+}
+
 func main() {
 	fmt.Println("Task 9.1")
-	s := []string{"апельсины", "мандарины", "яблоки"} //slice of fruits
-	for _, v := range s {
+	s1 := []string{"апельсины", "мандарины", "яблоки"} //slice of fruits
+	for _, v := range s1 {
 		fmt.Printf("%s - ", v)
 		val := fruitMarket(v)
 		if val >= 0 {
@@ -48,5 +60,12 @@ func main() {
 				}
 			}
 		}
+	}
+
+	fmt.Println("Task 9.3")
+	s3 := []string{"апельсин", "мандарин", "помидор", "томат"} //slice of food
+	for _, v := range s3 {
+		fmt.Print(v, ": ")
+		checkFood(v)
 	}
 }
