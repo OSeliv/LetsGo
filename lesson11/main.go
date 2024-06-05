@@ -25,7 +25,8 @@ func main() {
 
 	fmt.Println("Task11.2")
 	//errchain from 11.1
-	fmt.Println(errors.Unwrap(err1))
+	err2 := errors.Unwrap(err1)
+	fmt.Println(err2)
 
 	fmt.Println("Task11.3")
 	//errchain from 11.1 + err = ошибка1
@@ -36,5 +37,5 @@ func main() {
 	me := &myFirstError{message: "ошибка1"}
 	//errchain from 11.1
 	fmt.Println(err1)
-	fmt.Println("ошибки типа myFirstError не было:", !errors.As(err1, &me)) //сhecking not As
+	fmt.Println("ошибки типа myFirstError не было:", !errors.As(err1, &me)) //сhecking NOT As
 }
