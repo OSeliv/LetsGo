@@ -31,8 +31,8 @@ func main() {
 	// This is error == var d *Duck ==  nil pointer to Duck (not an object Duck) without value, Sing() not expects that
 	//	var d *Duck
 	//	song, err := Sing(d)
-	var d1 = Duck{"quack-quack"} // it can be just "var d1 Duck"
-	song, err := Sing(&d1)       // pointer to d1
+	var d1 Duck            //{"quack-quack"} // it can be just "var d1 Duck"
+	song, err := Sing(&d1) // pointer to d1
 
 	if err != nil {
 		fmt.Println(err)
@@ -78,6 +78,7 @@ func Sing(b Bird) (string, error) {
 	return b.Sing() //, errors.New("Ошибка пения!")  // was changed for 3rd way
 }
 
+// just a joke
 func printSong(s string) {
 	fmt.Println("\nOld MacDonald had a farm, E-I-E-I-O.\nAnd on that farm he had a duck, E-I-E-I-O.")
 	fmt.Printf("With a '%s' here and a '%s' there.\nOld MacDonald had a farm, E-I-E-I-O.\n", s, s)
