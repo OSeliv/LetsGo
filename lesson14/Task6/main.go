@@ -11,8 +11,9 @@ func main() {
 	It's very close to Task5: 
 	2 child goroutines - the 1st reads values from the channel _ch_, the 2nd sends values to _ch_ once per second. 
 	And the main goroutine, that waits for 5 sec and then send 2 'stop-signal' to terminate child goroutines. 
-	Therefore, child goroutines work for a certain duration. 
-	Main goroutine waits for another sec then finishes with printing message.`
+	Main goroutine waits for another sec then finishes with printing message.Therefore, child goroutines work for a certain duration. 
+	But 1st goroutine finishes it's work and 2nd terminates with main's finishing.
+	`
 	fmt.Println(explanation)
 	ch := make(chan int)
 	stop := make(chan struct{}, 2)
