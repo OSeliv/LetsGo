@@ -9,7 +9,7 @@ import (
 
 func main() {
 	ctx := context.Background()
-	ctx, cancel := context.WithTimeout(ctx, time.Second)
+	ctx, cancel := context.WithTimeout(ctx, 2*time.Second)
 	defer cancel()
 	wg := sync.WaitGroup{}
 	wg.Add(5)
@@ -24,7 +24,7 @@ func main() {
 					return
 				default:
 					fmt.Println("работа горутины: ", i)
-					time.Sleep(2 * time.Second)
+					time.Sleep(time.Second)
 				}
 			}
 		}()
